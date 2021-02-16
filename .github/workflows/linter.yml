@@ -20,4 +20,4 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
       - run: pip install black
-      - run: black --check $GITHUB_ENV
+      - run: black --check --verbose $GITHUB_ENV
