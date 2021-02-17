@@ -1,10 +1,14 @@
 name: CI
 
 on:
-  create:
-    branches: '**'
-  pull_request:
-    branches: [master]
+  # Execute on every push to any branch
+  push:
+    branches:
+      - "**"
+  # Execute on every pull request to the master branch
+  pull_request_target:
+    branches:
+      - master
 
 jobs:
   publish:
