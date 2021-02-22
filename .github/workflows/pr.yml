@@ -16,11 +16,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-      - run: pip install black
-      - run: black --check --verbose .
-
       - uses : call-for-code/build-push-deploy@test-different-group
         with:
           cloud-api-key: ${{ secrets.IBM_CLOUD_API_KEY }}
@@ -52,3 +47,4 @@ jobs:
           k8s-cluster-name: ${{ secrets.K8S_CLUSTER_NAME }}
           k8s-cluster-namespace: openeew-dev
           registry-hostname: us.icr.io
+          working-directory: "./database"
