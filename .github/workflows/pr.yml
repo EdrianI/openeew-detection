@@ -46,4 +46,4 @@ jobs:
           k8s-cluster-name: ${{ secrets.K8S_CLUSTER_NAME }}
           k8s-cluster-namespace: openeew-dev
           registry-hostname: us.icr.io
-          working-directory: "database/"
+          #working-directory: "database/"
