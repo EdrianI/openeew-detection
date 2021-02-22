@@ -24,6 +24,7 @@ jobs:
       - uses : call-for-code/build-push-deploy@test-different-group
         with:
           cloud-api-key: ${{ secrets.IBM_CLOUD_API_KEY }}
+          cloud-resource-group: OpenEEW-Infra
           cloud-region: us-south
           deployment-name: openeew-detection-mqtt
           github-sha: ${{ github.sha }}
@@ -42,6 +43,7 @@ jobs:
       - uses : call-for-code/build-push-deploy@test-different-group
         with:
           cloud-api-key: ${{ secrets.IBM_CLOUD_API_KEY }}
+          cloud-resource-group: OpenEEW-Infra
           cloud-region: us-south
           deployment-name: openeew-detection-db
           github-sha: ${{ github.sha }}
