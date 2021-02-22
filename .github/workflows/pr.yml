@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses : call-for-code/build-push-deploy@test-different-group
+      - uses : call-for-code/build-push-deploy@main
         with:
           cloud-api-key: ${{ secrets.IBM_CLOUD_API_KEY }}
           cloud-resource-group: OpenEEW-Infra
@@ -34,7 +34,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses : call-for-code/build-push-deploy@test-different-group
+      - uses : call-for-code/build-push-deploy@main
         with:
           cloud-api-key: ${{ secrets.IBM_CLOUD_API_KEY }}
           cloud-resource-group: OpenEEW-Infra
