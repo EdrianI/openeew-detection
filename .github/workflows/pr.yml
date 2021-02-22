@@ -1,0 +1,34 @@
+name: Pull Request Validation
+
+on:
+  # Execute on every push to any branch
+  push:
+    branches:
+      - "**"
+  # Execute on every pull request to the master branch
+  pull_request_target:
+    branches:
+      - master
+
+jobs:
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+      - run: pip install black
+      - run: black --check --verbose .
+
+      - uses : call-for-code/build-push-deploy@v1
+        with:
+          cloud-api-key: ${{ secrets.IBM_CLOUD_API_KEY }}
+          cloud-region: us-south
+          deployment-name: openeew-detection-mqtt
+          github-sha: ${{ github.sha }}
+          icr-namespace: ${{ secrets.ICR_NAMESPACE }}
+          image-name: detection-mqtt-gha
+          k8s-cluster-name: ${{ secrets.K8S_CLUSTER_NAME }}
+          k8s-cluster-namespace: openeew-dev
+          registry-hostname: us.icr.io
