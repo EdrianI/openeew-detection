@@ -21,7 +21,7 @@ jobs:
       - run: pip install black
       - run: black --check --verbose .
 
-      - uses : call-for-code/build-push-deploy@v1
+      - uses : call-for-code/build-push-deploy@test-different-group
         with:
           cloud-api-key: ${{ secrets.IBM_CLOUD_API_KEY }}
           cloud-region: us-south
@@ -39,7 +39,7 @@ jobs:
       run:
         working-directory: ./database
     steps:
-      - uses : call-for-code/build-push-deploy@v1
+      - uses : call-for-code/build-push-deploy@test-different-group
         with:
           cloud-api-key: ${{ secrets.IBM_CLOUD_API_KEY }}
           cloud-region: us-south
