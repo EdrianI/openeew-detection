@@ -14,7 +14,6 @@ jobs:
   mqtt-detection-build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
       - uses: actions/checkout@v2
 
       - name: Turnstyle
@@ -38,13 +37,7 @@ jobs:
   db-build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
       - uses: actions/checkout@v2
-
-      - name: Turnstyle
-        uses: softprops/turnstyle@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses : call-for-code/build-push-deploy@main
         with:
