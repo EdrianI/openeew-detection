@@ -39,6 +39,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Turnstyle
+        uses: softprops/turnstyle@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - uses : call-for-code/build-push-deploy@main
         with:
           cloud-api-key: ${{ secrets.IBM_CLOUD_API_KEY }}
