@@ -1,1 +1,3 @@
-This is a new push while a github action is running. This shouldn't execute another action.
+This is a new push while a github action is running. This shouldn't execute another action. This test passed
+
+Added turnstyle to both jobs in pr.yml. This should trigger another action that sits and waits - both jobs should wait.
