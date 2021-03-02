@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-      - run: pip install black
-      - run: black --check --verbose .
+      - name: Set environment variables
+        run: |
+          echo ${{ secrets.VCAP_LOCAL }} >> ./web/api/vcap-local.json
+      
